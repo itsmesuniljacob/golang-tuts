@@ -14,12 +14,14 @@ func calculate(value1 string, value2 string) float64 {
 
 	s1, err := strconv.ParseFloat(strings.TrimSpace(value1), 64)
 	if err != nil {
-		fmt.Println("Value must be a number")
+		fmt.Println(err)
+		panic("Value must be a number")
 	}
 
 	s2, err := strconv.ParseFloat(strings.TrimSpace(value2), 64)
 	if err != nil {
-		fmt.Println("Value must be a number")
+		fmt.Println(err)
+		panic("Value must be a number")
 	}
 
 	// Calculate and return the result
@@ -28,7 +30,7 @@ func calculate(value1 string, value2 string) float64 {
 }
 
 func main() {
-	value1 := "xyz"
+	value1 := "10"
 	value2 := "5.5"
 	result := calculate(value1, value2)
 	fmt.Println("The result is ", result)
