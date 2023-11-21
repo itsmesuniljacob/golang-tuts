@@ -16,6 +16,7 @@ func convertToMap(items []string) map[string]float64 {
 	result := make(map[string]float64)
 	// Your code goes here
 	elementValue := 100 / float64(len(items))
+	// ignoring index with _
 	for _, fruit := range items {
 		result[fruit] = elementValue
 	}
